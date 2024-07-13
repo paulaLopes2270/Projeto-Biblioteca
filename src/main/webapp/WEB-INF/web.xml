@@ -3,4 +3,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
+
+    <servlet>
+        <servlet-name>LivroController</servlet-name>
+        <servlet-class>Controller.LivrosController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LivroController</servlet-name>
+        <url-pattern>/livro</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UsuarioController</servlet-name>
+        <servlet-class>Controller.UsuariosController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsuarioController</servlet-name>
+        <url-pattern>/usuario</url-pattern>
+    </servlet-mapping>
+
 </web-app>
