@@ -2,39 +2,34 @@
   Created by IntelliJ IDEA.
   User: plnhs
   Date: 12/07/2024
-  Time: 23:09
+  Time: 21:31
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lista de Livros</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Listar Livros</title>
 </head>
 <body>
-<h1>Lista de Livros</h1>
-<table>
+<h2>Lista de Livros</h2>
+<table border="1">
     <tr>
         <th>ISBN</th>
-        <th>Título</th>
+        <th>Nome</th>
         <th>Categoria</th>
         <th>Quantidade</th>
-        <th>Ações</th>
+        <th>Usuário ID</th>
     </tr>
-    <c:forEach var="livro" items="${livros}">
+    <c:forEach var="livro" items="${listaLivros}">
         <tr>
             <td>${livro.isbn}</td>
-            <td>${livro.titulo}</td>
+            <td>${livro.nome}</td>
             <td>${livro.categoria}</td>
             <td>${livro.quantidade}</td>
-            <td>
-                <a href="LivroServlet?action=mostrarAlteracao&isbn=${livro.isbn}">Alterar</a>
-                <a href="LivroServlet?action=deletar&isbn=${livro.isbn}">Deletar</a>
-            </td>
+            <td>${livro.usuario_id}</td>
         </tr>
     </c:forEach>
 </table>
-<a href="index.jsp">Voltar</a>
 </body>
 </html>
