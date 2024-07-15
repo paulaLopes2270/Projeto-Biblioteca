@@ -15,6 +15,6 @@
 <body>
 <h1>Bem-vindo à Biblioteca</h1>
 <a href="cadastrar.jsp">Cadastrar Livro</a>
-<a href="listar.jsp">Listar Livros</a>
+<a href="LivrosController?action=listar">Listar Livros</a>
 </body>
 </html>

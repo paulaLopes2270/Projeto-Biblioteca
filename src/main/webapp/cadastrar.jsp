@@ -18,24 +18,21 @@
 </header>
 <nav>
     <a href="index.jsp">Home</a>
-    <a href="LivroServlet?action=listar">Listar Livros</a>
+    <a href="LivrosController?action=listar">Listar Livros</a>
 </nav>
 <div class="container">
     <form action="LivrosController?action=cadastrar" method="post">
         <label for="isbn">ISBN:</label>
-        <input type="text" id="isbn" name="isbn">
+        <input type="text" id="isbn" name="isbn" required>
 
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome">
+        <input type="text" id="nome" name="nome" required>
 
         <label for="categoria">Categoria:</label>
         <input type="text" id="categoria" name="categoria">
 
         <label for="quantidade">Quantidade:</label>
-        <input type="number" id="quantidade" name="quantidade">
-
-        <label for="usuario_id">Usuário ID:</label>
-        <input type="number" id="usuario_id" name="usuario_id">
+        <input type="number" id="quantidade" name="quantidade" required>
 
         <input type="submit" value="Cadastrar Livro">
     </form>

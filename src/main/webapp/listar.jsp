@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://xmlns.jcp.org/xml/ns/javaee/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,6 @@
         <th>Nome</th>
         <th>Categoria</th>
         <th>Quantidade</th>
-        <th>Usuário ID</th>
     </tr>
     <c:forEach var="livro" items="${listaLivros}">
         <tr>
@@ -27,7 +27,6 @@
             <td>${livro.nome}</td>
             <td>${livro.categoria}</td>
             <td>${livro.quantidade}</td>
-            <td>${livro.usuario_id}</td>
         </tr>
     </c:forEach>
 </table>
