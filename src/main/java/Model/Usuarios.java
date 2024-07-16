@@ -21,10 +21,10 @@ public class Usuarios {
     @Column(name = "nome", nullable = false, length = 50)
     private String nome;
 
-    @Column(name = "email", nullable = false, length = 100)
+    @Column(name = "email", nullable = false, length = 50)
     private String email;
 
-    @Column(name = "senha", nullable = false, length = 100)
+    @Column(name = "senha", nullable = false, length = 50)
     private String senha;
 
     public Usuarios(String nome, String email, String senha) {
