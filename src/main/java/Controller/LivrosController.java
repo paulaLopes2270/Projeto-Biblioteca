@@ -71,12 +71,12 @@ public class LivrosController extends HttpServlet {
             throws ServletException, IOException {
         List<Livros> listaLivros = livrosDAO.listarLivros();
         request.setAttribute("listaLivros", listaLivros);
-        request.getRequestDispatcher("listarLivros.jsp").forward(request, response);
+        request.getRequestDispatcher("listar.jsp").forward(request, response);
     }
 
     private void showCadastrarForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("cadastrarLivro.jsp").forward(request, response);
+        request.getRequestDispatcher("cadastrar.jsp").forward(request, response);
     }
 
     private void showEditarForm(HttpServletRequest request, HttpServletResponse response)
@@ -84,7 +84,7 @@ public class LivrosController extends HttpServlet {
         String isbn = request.getParameter("isbn");
         Livros livroExistente = livrosDAO.getLivro(isbn);
         request.setAttribute("livro", livroExistente);
-        request.getRequestDispatcher("editarLivro.jsp").forward(request, response);
+        request.getRequestDispatcher("editar.jsp").forward(request, response);
     }
 
     private void cadastrarLivro(HttpServletRequest request, HttpServletResponse response)
@@ -100,10 +100,10 @@ public class LivrosController extends HttpServlet {
             response.sendRedirect("LivrosController");
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Invalid number format");
-            request.getRequestDispatcher("cadastrarLivro.jsp").forward(request, response);
+            request.getRequestDispatcher("cadastrar.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", "An error occurred while processing your request");
-            request.getRequestDispatcher("cadastrarLivro.jsp").forward(request, response);
+            request.getRequestDispatcher("cadastrar.jsp").forward(request, response);
         }
     }
 
@@ -120,10 +120,10 @@ public class LivrosController extends HttpServlet {
             response.sendRedirect("LivrosController");
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Invalid number format");
-            request.getRequestDispatcher("editarLivro.jsp").forward(request, response);
+            request.getRequestDispatcher("editar.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", "An error occurred while processing your request");
-            request.getRequestDispatcher("editarLivro.jsp").forward(request, response);
+            request.getRequestDispatcher("editar.jsp").forward(request, response);
         }
     }
 
