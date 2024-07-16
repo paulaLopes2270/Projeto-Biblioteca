@@ -67,6 +67,7 @@
             <version>42.7.3</version>
         </dependency>
         <!--  https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api  -->
+
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
