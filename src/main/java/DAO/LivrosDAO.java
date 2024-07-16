@@ -2,20 +2,18 @@ package DAO;
 
 import Model.Livros;
 import Util.HibernateUtil;
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-
 public class LivrosDAO {
 
-    public void cadastrarLivros(Livros livros) {
+    public void cadastrarLivro(Livros livro) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            session.save(livros);
+            session.save(livro);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -25,23 +23,29 @@ public class LivrosDAO {
         }
     }
 
-    public List<Livros> getLivros() {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()){
-            return session.createQuery("from Livros").list();
-        }
-    }
-
-    public Livros getLivrosById(String isbn) {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+    public Livros getLivro(String isbn) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.get(Livros.class, isbn);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 
-    public void updateLivros(Livros livros) {
+    public List<Livros> listarLivros() {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            return session.createQuery("from Livros", Livros.class).list();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public void atualizarLivro(Livros livro) {
         Transaction transaction = null;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            session.update(livros);
+            session.update(livro);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -51,15 +55,15 @@ public class LivrosDAO {
         }
     }
 
-    public void deleteLivros(String isbn) {
+    public void deletarLivro(String isbn) {
         Transaction transaction = null;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            Livros livros = session.get(Livros.class, isbn);
-            if (livros != null) {
-                session.delete(livros);
-                transaction.commit();
+            Livros livro = session.get(Livros.class, isbn);
+            if (livro != null) {
+                session.delete(livro);
             }
+            transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();

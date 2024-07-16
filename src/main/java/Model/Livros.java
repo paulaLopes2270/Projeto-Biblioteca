@@ -11,8 +11,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
-@Table(name="livros")
+@Table(name = "livros")
 public class Livros {
     @Id
     @Column(name = "isbn", nullable = false, length = 13)

@@ -1,6 +1,5 @@
 package Controller;
 
-import DAO.LivrosDAO;
 import DAO.UsuariosDAO;
 import Model.Usuarios;
 
@@ -15,7 +14,6 @@ import java.util.List;
 
 @WebServlet(name = "UsuariosController", urlPatterns = {"/UsuariosController"})
 public class UsuariosController extends HttpServlet {
-    private UsuariosDAO UsuariosDAO;
 
     private UsuariosDAO usuariosDAO;
 
