@@ -1,18 +1,23 @@
 package Util;
+
 import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class HibernateUtil {
-    @Getter
-    private static SessionFactory sessionFactory = buildSessionFactory();
 
-    private static SessionFactory buildSessionFactory() {
+public class HibernateUtil {
+
+    private static SessionFactory sessionFactory;
+
+    static {
         try {
-            return new Configuration().configure("/hibernate.cfg.xml").buildSessionFactory();
-        } catch (Throwable e) {
-            throw new ExceptionInInitializerError("Erro ao configurar o Hibernate" + e);
+            sessionFactory = new Configuration().configure().buildSessionFactory();
+        } catch (Throwable ex) {
+            throw new ExceptionInInitializerError(ex);
         }
     }
 
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
 }
