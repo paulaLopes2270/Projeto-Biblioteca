@@ -14,12 +14,20 @@
 </head>
 <body>
 <h2>Lista de Livros</h2>
+
+<c:if test="${not empty sessionScope.user}">
+    <a href="LivrosController?action=cadastrar">Cadastrar Livro</a>
+</c:if>
+
 <table border="1">
     <tr>
         <th>ISBN</th>
         <th>Nome</th>
         <th>Categoria</th>
         <th>Quantidade</th>
+        <c:if test="${not empty sessionScope.user}">
+            <th>Ações</th>
+        </c:if>
     </tr>
     <c:forEach var="livro" items="${listaLivros}">
         <tr>
@@ -27,9 +35,14 @@
             <td>${livro.nome}</td>
             <td>${livro.categoria}</td>
             <td>${livro.quantidade}</td>
+            <c:if test="${not empty sessionScope.user}">
+                <td>
+                    <a href="LivrosController?action=editar&isbn=${livro.isbn}">Editar</a>
+                    <a href="LivrosController?action=deletar&isbn=${livro.isbn}" onclick="return confirm('Tem certeza que deseja deletar este livro?');">Deletar</a>
+                </td>
+            </c:if>
         </tr>
     </c:forEach>
 </table>
 </body>
 </html>
-
