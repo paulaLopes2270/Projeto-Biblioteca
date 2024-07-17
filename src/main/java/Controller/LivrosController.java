@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,9 +26,21 @@ public class LivrosController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
         String action = request.getParameter("action");
         if (action == null) {
             action = "listar";
+        }
+
+        switch (action) {
+            case "cadastrar":
+            case "editar":
+            case "deletar":
+                if (session == null || session.getAttribute("user") == null) {
+                    response.sendRedirect("login.jsp");
+                    return;
+                }
+                break;
         }
 
         switch (action) {
@@ -49,9 +62,20 @@ public class LivrosController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession(false);
         String action = request.getParameter("action");
         if (action == null) {
             action = "listar";
+        }
+
+        switch (action) {
+            case "cadastrar":
+            case "editar":
+                if (session == null || session.getAttribute("user") == null) {
+                    response.sendRedirect("login.jsp");
+                    return;
+                }
+                break;
         }
 
         switch (action) {
