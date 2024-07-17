@@ -11,8 +11,9 @@ public class HibernateUtil {
         try {
             return new Configuration().configure("/hibernate.cfg.xml").buildSessionFactory();
         } catch (Throwable e) {
-            throw new ExceptionInInitializerError("Erro ao configurar o Hibernate" + e);
+            System.err.println("Erro ao configurar o Hibernate: " + e);
+            e.printStackTrace(); // Adiciona a pilha de erros ao log
+            throw new ExceptionInInitializerError("Erro ao configurar o Hibernate: " + e);
         }
     }
-
 }
