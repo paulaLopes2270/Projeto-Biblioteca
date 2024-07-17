@@ -2,9 +2,9 @@ package DAO;
 
 import Model.Livros;
 import Util.HibernateUtil;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 import java.util.List;
 
 public class LivrosDAO {
@@ -33,11 +33,11 @@ public class LivrosDAO {
     }
 
     public List<Livros> listarLivros() {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("from Livros", Livros.class).list();
+        try (Session session =  HibernateUtil.getSessionFactory().openSession()) {
+            return session.createQuery("from Livros ").getResultList();
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            throw new HibernateException("Não foi possível encontrar nenhum livro!" + e.getMessage());
         }
     }
 
