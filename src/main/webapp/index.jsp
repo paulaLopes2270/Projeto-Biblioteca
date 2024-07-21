@@ -13,18 +13,22 @@
     .nav-item a {
         color: #007BFF; /* Cor padrão dos links */
     }
-
+    .form-container {
+        width: 30%;
+        margin: 0 auto;
+        padding-top: 40px;
+    }
 </style>
 <head>  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <title>Biblioteca</title>
+<%--    <link rel="stylesheet" type="text/css" href="css/styles.css">--%>
+
+    <title>Login</title>
 
 </head>
-<body>
+<body >
 <!-- Só uma imagem -->
 <nav class="navbar navbar-light bg-light">
-<%--   <img src="https://i.ibb.co/4ZQBrkq/DALL-E-2024-07-19-21-57-46-A-cute-robot-reading-a-book-similar-to-the-provided-image-The-robot-shoul.webp" alt="DALL-E-2024-07-19-21-57-46-A-cute-robot-reading-a-book-similar-to-the-provided-image-The-robot-shoul" border="0" /></a>--%>
     <a class="navbar-brand" href="#">
         <img src="https://i.ibb.co/FD5vTcV/logo.png" width="220" height="220" alt="Bibliotech">
     </a>
@@ -38,8 +42,24 @@
     </ul>
 </nav>
 
-<h1>Bem-vindo à Biblioteca</h1>
-<a href="cadastrar.jsp">Cadastrar Livro</a>
-<a href="LivrosController?action=listar">Listar Livros</a>
+<%--<h1>Bem-vindo à Biblioteca</h1>--%>
+<div class="form-container">
+    <h1> Login </h1>
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Endereço de email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+        <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Senha</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+    </div>
+    <div >
+        <p><a href="UsuariosController?action=cadastrar">Não tem cadastro? Clique aqui!</a></p>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+</div>
 </body>
 </html>

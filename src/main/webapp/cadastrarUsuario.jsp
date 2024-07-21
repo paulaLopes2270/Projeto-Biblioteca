@@ -10,15 +10,15 @@
       color: #007BFF; /* Cor padrão dos links */
     }
     .form-container {
-      width: 60%;
+      width: 50%;
       margin: 0 auto;
     }
   </style>
+  <title>Login</title>
 </head>
 <body>
 <!-- Só uma imagem -->
 <nav class="navbar navbar-light bg-light">
-  <%--   <img src="https://i.ibb.co/4ZQBrkq/DALL-E-2024-07-19-21-57-46-A-cute-robot-reading-a-book-similar-to-the-provided-image-The-robot-shoul.webp" alt="DALL-E-2024-07-19-21-57-46-A-cute-robot-reading-a-book-similar-to-the-provided-image-The-robot-shoul" border="0" /></a>--%>
   <a class="navbar-brand" href="#">
     <img src="https://i.ibb.co/FD5vTcV/logo.png" width="220" height="220" alt="Bibliotech">
   </a>
@@ -33,7 +33,7 @@
 </nav>
 <div class="container mt-5">
   <div class="form-container">
-    <h1>Cadastro de Usuário</h1>
+    <h1>Cadastro de usuário</h1>
 
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -52,12 +52,12 @@
       </div>
       <div class="form-group">
         <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required class="form-control" placeholder="Senha">
+        <input type="password" id="senha" name="senha" required class="form-control" placeholder="Escolha uma senha">
       </div>
       <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 
-    <p class="mt-3"><a href="usuario?action=listar">Voltar para Listagem</a></p>
+    <p class="mt-3"><a href="index.jsp">Voltar para Login</a></p>
   </div>
 </div>
 </body>

@@ -13,11 +13,19 @@
     .nav-item a {
         color: #007BFF; /* Cor padrão dos links */
     }
+    .table-wrapper {
+        max-width: 80%;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+    .table-container {
+        overflow-x: auto;
+    }
 </style>
 <head>
     <title>Listar Livros</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
+<%--    <link rel="stylesheet" href="css/styles.css">--%>
 </head>
 <body>
 <!-- Só uma imagem -->
