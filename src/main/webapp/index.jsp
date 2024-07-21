@@ -14,7 +14,7 @@
         color: #007BFF; /* Cor padrão dos links */
     }
     .form-container {
-        width: 30%;
+        width: 40%;
         margin: 0 auto;
         padding-top: 40px;
     }

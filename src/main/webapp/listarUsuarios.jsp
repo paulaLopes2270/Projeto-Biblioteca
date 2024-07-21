@@ -49,7 +49,7 @@
     </c:if>
     <div class="table-container">
         <table class="table table-striped table-bordered">
-            <thead class="thead-dark">
+            <thead>
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
