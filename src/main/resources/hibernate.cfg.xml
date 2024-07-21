@@ -5,7 +5,7 @@
         <!-- Configurações do PostgreSQL -->
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
         <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">admin</property>
+        <property name="hibernate.connection.password">1234</property>
 
         <!-- Configurações do Hibernate -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>

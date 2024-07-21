@@ -9,34 +9,63 @@
 
 <!DOCTYPE html>
 <html>
+<style>
+    .nav-item a {
+        color: #007BFF; /* Cor padrão dos links */
+    }
+
+    .form-container {
+        width: 60%;
+        margin: 0 auto;
+        max-width: 800px; /* limite de largura máxima */
+        margin-top: 3rem;
+    }
+    </style>
 <head>
-    <title>Cadastrar Livro</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Listar Livros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<%--    <link rel="stylesheet" href="css/styles.css">--%>
 </head>
 <body>
-<header>
-    <h1>Cadastrar Livro</h1>
-</header>
-<nav>
-    <a href="index.jsp">Home</a>
-    <a href="LivrosController?action=listar">Listar Livros</a>
+<!-- Só uma imagem -->
+<nav class="navbar navbar-light bg-light">
+    <%--   <img src="https://i.ibb.co/4ZQBrkq/DALL-E-2024-07-19-21-57-46-A-cute-robot-reading-a-book-similar-to-the-provided-image-The-robot-shoul.webp" alt="DALL-E-2024-07-19-21-57-46-A-cute-robot-reading-a-book-similar-to-the-provided-image-The-robot-shoul" border="0" /></a>--%>
+    <a class="navbar-brand" href="#">
+        <img src="https://i.ibb.co/FD5vTcV/logo.png" width="220" height="220" alt="Bibliotech">
+    </a>
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link" href="LivrosController?action=listar">Listar</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="cadastrar.jsp">Cadastrar</a>
+        </li>
+    </ul>
 </nav>
-<div class="container">
-    <form action="LivrosController?action=cadastrar" method="post">
-        <label for="isbn">ISBN:</label>
-        <input type="text" id="isbn" name="isbn" required>
 
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="categoria">Categoria:</label>
-        <input type="text" id="categoria" name="categoria">
-
-        <label for="quantidade">Quantidade:</label>
-        <input type="number" id="quantidade" name="quantidade" required>
-
-        <input type="submit" value="Cadastrar Livro">
+<div class="form-container">
+    <form class="row g-3" action="LivrosController?action=cadastrar" method="post">
+        <div class="col-md-6">
+            <label for="isbn" class="form-label">ISBN</label>
+            <input type="text" id="isbn" name="isbn" required class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" id="nome" name="nome" required class="form-control">
+        </div>
+        <div class="col-12">
+            <label for="categoria" class="form-label">Categoria</label>
+            <input type="text" id="categoria" name="categoria" placeholder="Informe a categoria do livro" class="form-control">
+        </div>
+        <div class="col-12">
+            <label for="quantidade" class="form-label">Quantidade</label>
+            <input type="number" id="quantidade" name="quantidade" required class="form-control">
+        </div>
+        <div class="col-12 mt-3">
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
     </form>
 </div>
+
 </body>
 </html>

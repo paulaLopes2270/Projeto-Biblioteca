@@ -7,27 +7,12 @@ body {
 
 header {
     background-color: #333;
-    color: #fff;
+    /*color: #fff;*/
     padding: 1em 0;
     text-align: center;
 }
 
-nav {
-    background-color: #444;
-    color: #fff;
-    padding: 0.5em 0;
-    text-align: center;
-}
 
-nav a {
-    color: #fff;
-    margin: 0 1em;
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
 
 .container {
     margin: 2em auto;
@@ -63,7 +48,7 @@ form input[type="submit"]:hover {
 }
 
 table {
-    width: 100%;
+    width: 70%;
     border-collapse: collapse;
 }
 
@@ -85,4 +70,20 @@ td a {
 
 td a:hover {
     text-decoration: underline;
+}
+
+
+.nav-item a {
+    color: #007BFF; /* Cor padrão dos links */
+}
+
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.table-container {
+    width: 80%;
+    margin: auto;
 }
