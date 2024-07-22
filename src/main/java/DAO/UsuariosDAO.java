@@ -32,6 +32,18 @@ public class UsuariosDAO {
         }
     }
 
+    public Usuarios getUsuarioByEmail(String email) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            String hql = "FROM Usuarios WHERE email = :email";
+            return session.createQuery(hql, Usuarios.class)
+                    .setParameter("email", email)
+                    .uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public List<Usuarios> listarUsuarios() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("from Usuarios", Usuarios.class).list();

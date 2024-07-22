@@ -37,7 +37,7 @@ public class AuthenticationFilter implements Filter {
             chain.doFilter(request, response);
         } else {
             // Redireciona para a página de login
-            res.sendRedirect("login.jsp");
+            res.sendRedirect("index.jsp");
         }
     }
 
