@@ -154,7 +154,13 @@ public class LivrosController extends HttpServlet {
     private void deletarLivro(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String isbn = request.getParameter("isbn");
-        livrosDAO.deletarLivro(isbn);
+        Livros livro = livrosDAO.getLivro(isbn);
+        if (livro.getQuantidade() > 1) {
+            livro.setQuantidade(livro.getQuantidade() - 1);
+            livrosDAO.atualizarLivro(livro);
+        } else {
+            livrosDAO.deletarLivro(isbn);
+        }
         response.sendRedirect("LivrosController");
     }
 }
