@@ -17,7 +17,10 @@
   <title>Login</title>
 </head>
 <body>
-<!-- Só uma imagem -->
+<%
+  HttpSession httpSession = request.getSession(false);
+  boolean isLoggedIn = (httpSession != null && httpSession.getAttribute("user") != null);
+%>
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
     <img src="https://i.ibb.co/FD5vTcV/logo.png" width="220" height="220" alt="Bibliotech">
@@ -29,6 +32,15 @@
     <li class="nav-item">
       <a class="nav-link" href="cadastrar.jsp">Cadastrar</a>
     </li>
+    <% if (isLoggedIn) { %>
+    <li class="nav-item">
+      <a class="nav-link" href="LogoutController">Logout</a>
+    </li>
+    <% } else { %>
+    <li class="nav-item">
+      <a class="nav-link" href="index.jsp">Login</a>
+    </li>
+    <% } %>
   </ul>
 </nav>
 <div class="container mt-5">

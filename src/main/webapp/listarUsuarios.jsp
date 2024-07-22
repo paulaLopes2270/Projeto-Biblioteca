@@ -23,9 +23,11 @@
 <%--    <link rel="stylesheet" href="css/styles.css">--%>
 </head>
 <body>
-<!-- Só uma imagem -->
+<%
+    HttpSession httpSession = request.getSession(false);
+    boolean isLoggedIn = (httpSession != null && httpSession.getAttribute("user") != null);
+%>
 <nav class="navbar navbar-light bg-light">
-    <%--   <img src="https://i.ibb.co/4ZQBrkq/DALL-E-2024-07-19-21-57-46-A-cute-robot-reading-a-book-similar-to-the-provided-image-The-robot-shoul.webp" alt="DALL-E-2024-07-19-21-57-46-A-cute-robot-reading-a-book-similar-to-the-provided-image-The-robot-shoul" border="0" /></a>--%>
     <a class="navbar-brand" href="#">
         <img src="https://i.ibb.co/FD5vTcV/logo.png" width="220" height="220" alt="Bibliotech">
     </a>
@@ -36,6 +38,15 @@
         <li class="nav-item">
             <a class="nav-link" href="cadastrar.jsp">Cadastrar</a>
         </li>
+        <% if (isLoggedIn) { %>
+        <li class="nav-item">
+            <a class="nav-link" href="LogoutController">Logout</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+            <a class="nav-link" href="index.jsp">Login</a>
+        </li>
+        <% } %>
     </ul>
 </nav>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

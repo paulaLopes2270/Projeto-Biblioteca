@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="jakarta.servlet.http.HttpSession" %>
+<%@ page import="jakarta.servlet.http.HttpServletRequest" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,9 +20,17 @@
             color: red;
             margin-bottom: 20px;
         }
+        .success-message {
+            color: green;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
+<%
+    HttpSession httpSession = request.getSession(false);
+    boolean isLoggedIn = (httpSession != null && httpSession.getAttribute("user") != null);
+%>
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <img src="https://i.ibb.co/FD5vTcV/logo.png" width="220" height="220" alt="Bibliotech">
@@ -32,6 +42,15 @@
         <li class="nav-item">
             <a class="nav-link" href="cadastrar.jsp">Cadastrar</a>
         </li>
+        <% if (isLoggedIn) { %>
+        <li class="nav-item">
+            <a class="nav-link" href="LogoutController">Logout</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+            <a class="nav-link" href="index.jsp">Login</a>
+        </li>
+        <% } %>
     </ul>
 </nav>
 
@@ -39,6 +58,8 @@
     <h1>Login</h1>
     <% if ("true".equals(request.getParameter("error"))) { %>
     <div class="error-message">Credenciais inválidas. Tente novamente.</div>
+    <% } else if ("true".equals(request.getParameter("logout"))) { %>
+    <div class="success-message">Você foi deslogado com sucesso. <a href="index.jsp">Faça login novamente</a></div>
     <% } %>
     <form action="LoginController" method="post">
         <div class="form-group">
@@ -58,10 +79,12 @@
 </div>
 
 <script>
-    // Verifique se há um parâmetro de erro na URL
+    // Verifique se há um parâmetro de erro ou logout na URL
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('error')) {
         console.error('Credenciais inválidas. Tente novamente.');
+    } else if (urlParams.has('logout')) {
+        console.log('Você foi deslogado com sucesso.');
     }
 </script>
 </body>

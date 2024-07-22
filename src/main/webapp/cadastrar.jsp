@@ -27,18 +27,30 @@
 <%--    <link rel="stylesheet" href="css/styles.css">--%>
 </head>
 <body>
-<!-- Só uma imagem -->
+<%
+    HttpSession httpSession = request.getSession(false);
+    boolean isLoggedIn = (httpSession != null && httpSession.getAttribute("user") != null);
+%>
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <img src="https://i.ibb.co/FD5vTcV/logo.png" width="220" height="220" alt="Bibliotech">
     </a>
     <ul class="nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link" href="LivrosController?action=listar">Listar</a>
+            <a class="nav-link active" href="LivrosController?action=listar">Listar</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="cadastrar.jsp">Cadastrar</a>
         </li>
+        <% if (isLoggedIn) { %>
+        <li class="nav-item">
+            <a class="nav-link" href="LogoutController">Logout</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+            <a class="nav-link" href="index.jsp">Login</a>
+        </li>
+        <% } %>
     </ul>
 </nav>
 
