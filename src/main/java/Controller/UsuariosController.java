@@ -96,7 +96,7 @@ public class UsuariosController extends HttpServlet {
 
             Usuarios novoUsuario = new Usuarios(nome, email, senha);
             usuariosDAO.cadastrarUsuario(novoUsuario);
-            response.sendRedirect("UsuariosController");
+            response.sendRedirect("index.jsp?success=true");
         } catch (Exception e) {
             request.setAttribute("error", "An error occurred while processing your request");
             request.getRequestDispatcher("cadastrarUsuario.jsp").forward(request, response);

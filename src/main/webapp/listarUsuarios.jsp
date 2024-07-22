@@ -35,9 +35,6 @@
         <li class="nav-item">
             <a class="nav-link active" href="LivrosController?action=listar">Listar</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="cadastrar.jsp">Cadastrar</a>
-        </li>
         <% if (isLoggedIn) { %>
         <li class="nav-item">
             <a class="nav-link" href="LogoutController">Logout</a>

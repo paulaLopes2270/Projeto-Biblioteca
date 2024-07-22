@@ -28,7 +28,8 @@
 </head>
 <body>
 <%
-    HttpSession httpSession = request.getSession(false);
+    HttpServletRequest req = (HttpServletRequest) request;
+    HttpSession httpSession = req.getSession(false);
     boolean isLoggedIn = (httpSession != null && httpSession.getAttribute("user") != null);
 %>
 <nav class="navbar navbar-light bg-light">
@@ -38,9 +39,6 @@
     <ul class="nav justify-content-end">
         <li class="nav-item">
             <a class="nav-link active" href="LivrosController?action=listar">Listar</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="cadastrar.jsp">Cadastrar</a>
         </li>
         <% if (isLoggedIn) { %>
         <li class="nav-item">
@@ -59,7 +57,9 @@
     <% if ("true".equals(request.getParameter("error"))) { %>
     <div class="error-message">Credenciais inválidas. Tente novamente.</div>
     <% } else if ("true".equals(request.getParameter("logout"))) { %>
-    <div class="success-message">Você foi deslogado com sucesso. <a href="index.jsp">Faça login novamente</a></div>
+    <div class="success-message">Você foi deslogado com sucesso.</div>
+    <% } else if ("true".equals(request.getParameter("success"))) { %>
+    <div class="success-message">Cadastro realizado com sucesso. Faça login abaixo.</div>
     <% } %>
     <form action="LoginController" method="post">
         <div class="form-group">
@@ -79,12 +79,14 @@
 </div>
 
 <script>
-    // Verifique se há um parâmetro de erro ou logout na URL
+    // Verifique se há um parâmetro de erro, logout ou sucesso na URL
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('error')) {
         console.error('Credenciais inválidas. Tente novamente.');
     } else if (urlParams.has('logout')) {
         console.log('Você foi deslogado com sucesso.');
+    } else if (urlParams.has('success')) {
+        console.log('Cadastro realizado com sucesso.');
     }
 </script>
 </body>
