@@ -65,19 +65,19 @@
     <form class="row g-3" action="LivrosController?action=editar" method="post">
         <div class="col-md-6">
             <label for="isbn" class="form-label" >ISBN</label>
-            <input type="text" id="isbn" name="isbn" disabled class="form-control" value="${livro.isbn}">
+            <input type="text" id="isbn" name="isbn" readonly class="form-control" value="${livro.isbn}">
         </div>
         <div class="col-md-6">
             <label for="nome" class="form-label">Nome</label>
-            <input type="text" id="nome" name="nome" required class="form-control" value="${livro.nome}">
+            <input type="text" id="nome" name="nome"  class="form-control" value="${livro.nome}">
         </div>
         <div class="col-12">
             <label for="categoria" class="form-label">Categoria</label>
-            <input type="text" id="categoria" name="categoria" placeholder="Informe a categoria do livro" class="form-control"  value="${livro.categoria}">
+            <input type="text" id="categoria" name="categoria"  class="form-control"  value="${livro.categoria}">
         </div>
         <div class="col-12">
             <label for="quantidade" class="form-label">Quantidade</label>
-            <input type="number" id="quantidade" name="quantidade" required class="form-control" value="${livro.quantidade}">
+            <input type="number" id="quantidade" name="quantidade"  class="form-control" value="${livro.quantidade}">
         </div>
         <div class="col-12 mt-3">
             <button type="submit" class="btn btn-primary">Alterar</button>
