@@ -1,0 +1,40 @@
+[33me5c7a66[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/editBook[m[33m, [m[1;32meditBook[m[33m)[m editar livros e deletar livros com mais de uma unidade deletando apenas uma unidade por vez
+[33ma7cd8df[m alteração cadastro usuário
+[33m814a1ce[m[33m ([m[1;31morigin/logoutController[m[33m, [m[1;32mlogoutController[m[33m)[m logout finalizado
+[33md5c5b00[m[33m ([m[1;31morigin/loginController[m[33m, [m[1;32mloginController[m[33m)[m Criação loginController, edição UsuariosDAO e AuthenticationFilter, mensagem de credenciais inválidas
+[33m6c68039[m[33m ([m[1;31morigin/style2[m[33m, [m[1;31morigin/style[m[33m, [m[1;32mstyle2[m[33m, [m[1;32mstyle[m[33m, [m[1;32mfinish[m[33m)[m up
+[33m4e996da[m estilização cadastrar usuários, login e listas
+[33m69954e7[m estilização cadastrar usuario
+[33m226f6f4[m estilização pages livros
+[33mf98606e[m[33m ([m[1;31morigin/master[m[33m)[m Merge pull request #9 from paulaLopes2270/initMilena
+[33m0c2f9ce[m[33m ([m[1;31morigin/initMilena[m[33m)[m feat()Páginas jsp dos usuários
+[33ma0d7840[m Merge pull request #8 from paulaLopes2270/initMilena
+[33m176dc2a[m feat()atenticação dos usuários
+[33m1ccf248[m Merge pull request #7 from paulaLopes2270/initMilena
+[33mb0e1cb6[m fix()listar livros
+[33mb4ccadb[m fix()erro ao listar livros correção
+[33m0a077ab[m Merge pull request #6 from paulaLopes2270/initMilena
+[33mc94fa7f[m fix()listar livros
+[33m8170187[m up controller
+[33m9367a6a[m up
+[33m621bf5a[m up
+[33m15382f3[m up
+[33mb2ae3db[m Revert "Merge pull request #5 from paulaLopes2270/initMilena"
+[33m24ec56e[m updates
+[33m25388c1[m Merge pull request #5 from paulaLopes2270/initMilena
+[33mdb1adcd[m fix()listar livros
+[33m26dd8f7[m listar
+[33mef7c35c[m Merge branch 'master' of github.com:paulaLopes2270/Projeto-Biblioteca into initPaula
+[33m2c6507b[m Merge pull request #3 from paulaLopes2270/initMilena
+[33me7a9ec0[m feat()adição dependências e versão junit
+[33m2125fce[m update
+[33mef70e8a[m cadastro livros no banco ok
+[33m6a02399[m controllers e servlets
+[33m645aa56[m Merge pull request #2 from paulaLopes2270/initMilena
+[33m8584089[m feat()criacao models, dao e estrutura de pastas
+[33me4a6cb3[m Merge remote-tracking branch 'origin/master' into initMilena
+[33me668392[m feat()criacao models, dao e estrutura de pastas
+[33meb65a21[m init class
+[33m00b5397[m conection test
+[33m5c6035c[m going up Tomcat
+[33mcbb0ea6[m init
