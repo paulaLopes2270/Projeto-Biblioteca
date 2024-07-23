@@ -84,14 +84,5 @@
         </div>
     </form>
 </div>
-<%--<div class="container">--%>
-<%--    <form action="LivrosController?action=editar" method="post">--%>
-<%--        ISBN: <input type="text" name="isbn" value="${livro.isbn}" readonly><br>--%>
-<%--        Nome: <input type="text" name="nome" value="${livro.nome}" required><br>--%>
-<%--        Categoria: <input type="text" name="categoria" value="${livro.categoria}"><br>--%>
-<%--        Quantidade: <input type="number" name="quantidade" value="${livro.quantidade}" required><br>--%>
-<%--        <input type="submit" value="Alterar">--%>
-<%--    </form>--%>
-<%--</div>--%>
 </body>
 </html>
