@@ -55,7 +55,7 @@
     <form class="row g-3" action="LivrosController?action=cadastrar" method="post">
         <div class="col-md-6">
             <label for="isbn" class="form-label">ISBN</label>
-            <input type="text" id="isbn" name="isbn" required class="form-control">
+            <input type="text" id="isbn" name="isbn" required class="form-control" maxlength="13">
         </div>
         <div class="col-md-6">
             <label for="nome" class="form-label">Nome</label>
