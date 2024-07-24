@@ -31,7 +31,7 @@
 </nav>
 
 <div class="form-container">
-  <h1 class="text-center">Edição de Usuário</h1>
+  <h1>Alterar Usuário</h1>
 
   <%-- Mostra mensagens de erro --%>
   <%@ include file="mensagemErro.jsp" %>
