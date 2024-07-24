@@ -1,18 +1,18 @@
 Requisitos:
 
-TomCat (versão 10.1.26)
-https://tomcat.apache.org/download-10.cgi
+TomCat (versão 10.1.26)  
+https://tomcat.apache.org/download-10.cgi  
 
-Tecnologias utilizadas: 
+Tecnologias utilizadas:
 
-Java
-Hibernate
-Servlet
-JSP
-Bootstrap 5 
-CSS
-HTML
-JavaScript
+- Java  
+- Hibernate  
+- Servlet  
+- JSP  
+- Bootstrap 5  
+- CSS  
+- HTML  
+- JavaScript  
 
  Script Banco de Dados
 
