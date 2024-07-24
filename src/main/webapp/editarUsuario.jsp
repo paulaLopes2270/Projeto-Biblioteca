@@ -57,7 +57,7 @@
 
     <div class="form-group">
       <label for="senha">Nova Senha:</label>
-      <input type="password" class="form-control" id="senha" name="senha">
+      <input type="password" class="form-control" id="senha" name="senha" required>
     </div>
 
     <button type="submit" class="btn btn-primary">Salvar</button>
