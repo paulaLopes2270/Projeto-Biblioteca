@@ -60,7 +60,7 @@
         </div>
         <div class="col-md-6">
             <label for="nome" class="form-label">Nome</label>
-            <input type="text" id="nome" name="nome" required class="form-control">
+            <input type="text" id="nome" name="nome" required class="form-control"  maxlength="50">
         </div>
         <div class="col-12">
             <label for="categoria" class="form-label">Categoria</label>
@@ -68,7 +68,7 @@
         </div>
         <div class="col-12">
             <label for="quantidade" class="form-label">Quantidade</label>
-            <input type="number" id="quantidade" name="quantidade" required class="form-control">
+            <input type="number" id="quantidade" name="quantidade" required class="form-control" min="0">
         </div>
         <div class="col-12 mt-3">
             <button type="submit" class="btn btn-primary">Cadastrar</button>
