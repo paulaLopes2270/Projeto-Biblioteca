@@ -27,6 +27,9 @@ CREATE TABLE LIVROS (
 ![image](https://github.com/user-attachments/assets/990968db-0e63-4145-ad0a-93272ddac504)
 
 
+![image](https://github.com/user-attachments/assets/62014e2b-5b5b-4361-a0ab-9bac1840e971)
+
+
 ![image](https://github.com/user-attachments/assets/7248f6a9-9e20-4e05-b16c-15d83c78fbed)
 
 
