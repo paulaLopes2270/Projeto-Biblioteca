@@ -52,6 +52,7 @@
 </nav>
 
 <div class="form-container">
+    <h1>Cadastrar Livro</h1>
     <form class="row g-3" action="LivrosController?action=cadastrar" method="post">
         <div class="col-md-6">
             <label for="isbn" class="form-label">ISBN</label>

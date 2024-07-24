@@ -12,7 +12,7 @@
             color: #007BFF; /* Cor padrão dos links */
         }
         .form-container {
-            width: 40%;
+            width: 30%;
             margin: 0 auto;
             padding-top: 40px;
         }

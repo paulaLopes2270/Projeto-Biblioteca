@@ -42,7 +42,7 @@
 </nav>
 <div class="container mt-5">
   <div class="form-container">
-    <h1>Cadastro de usuário</h1>
+    <h1>Cadastro de Usuário</h1>
 
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
