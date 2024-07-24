@@ -1,9 +1,9 @@
-Requisitos:
+**Requisitos:**
 
 TomCat (versão 10.1.26)  
 https://tomcat.apache.org/download-10.cgi  
 
-Tecnologias utilizadas:
+**Tecnologias utilizadas:**
 
 - Java  
 - Hibernate  
@@ -14,7 +14,8 @@ Tecnologias utilizadas:
 - HTML  
 - JavaScript  
 
- Script Banco de Dados
+
+**Script Banco de Dados**
 
 ```sql
 CREATE TABLE USUARIOS (
@@ -32,8 +33,10 @@ CREATE TABLE LIVROS (
     USUARIO_ID INTEGER,
     FOREIGN KEY (USUARIO_ID) REFERENCES USUARIOS(ID)
 );
-
 ```
+
+**Resumo visual** 
+
 ![image](https://github.com/user-attachments/assets/1dfcdd6c-b88b-4567-bb1a-76db9896d577)
 
 
