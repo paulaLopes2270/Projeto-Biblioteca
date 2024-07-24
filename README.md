@@ -1,4 +1,4 @@
-# Script Banco de Dados
+ Script Banco de Dados
 
 ```sql
 CREATE TABLE USUARIOS (
